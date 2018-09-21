@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CCLoginKit_Example' do
+  pod 'CCLoginKit', :path => '../'
+
+  target 'CCLoginKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
