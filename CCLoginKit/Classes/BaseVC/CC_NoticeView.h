@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CC_UIViewExt.h"
 @interface CC_NoticeView : UIView{
     NSString *noticeString;
 }

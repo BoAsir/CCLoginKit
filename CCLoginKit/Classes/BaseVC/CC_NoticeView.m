@@ -8,6 +8,7 @@
 #import "CC_NoticeView.h"
 #import "CCMacros.h"
 #import "CC_UIHelper.h"
+#import "CC_UIViewExt.h"
 
 @implementation CC_NoticeView
 @synthesize noticeString;
