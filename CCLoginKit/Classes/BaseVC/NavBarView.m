@@ -8,6 +8,7 @@
 
 #import "NavBarView.h"
 #import "CCMacros.h"
+#import "CC_Share.h"
 
 @implementation NavBarView
 

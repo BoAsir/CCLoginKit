@@ -8,6 +8,7 @@
 
 #ifndef ReadMe_h
 #define ReadMe_h
+/*
 使用前必读：
 
 JKEncrypt 是用于3DES 256加密解密的库。
@@ -45,5 +46,5 @@ NSString *decEncryptHex = [en doEncryptHex:encryptHex];
 
 BBLOG(@"字符串解密:%@",decEncryptStr);
 BBLOG(@"字符串解密:%@",decEncryptHex);
-
+*/
 #endif /* ReadMe_h */
