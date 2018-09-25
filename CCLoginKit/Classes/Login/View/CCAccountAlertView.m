@@ -7,7 +7,9 @@
 //
 
 #import "CCAccountAlertView.h"
-
+#import "CCMacros.h"
+#import "Masonry.h"
+#import "CC_UIViewExt.h"
 @implementation CCAccountAlertView
 
 /*

@@ -7,7 +7,8 @@
 //
 
 #import "CCViewController.h"
-
+#import "CC_Share.h"
+#import "UserStateManager.h"
 @interface CCViewController ()
 
 @end

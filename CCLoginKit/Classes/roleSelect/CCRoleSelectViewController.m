@@ -10,7 +10,9 @@
 #import "CCRoleSelectTableViewCell.h"
 #import "CCRoleCreateViewController.h"
 #import "CCRoleRequest.h"
-
+#import "MaskProgressHUD.h"
+#import "CCLoginConfig.h"
+#import "CC_NoticeView.h"
 @interface CCRoleSelectViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,retain) UIView *displayV;

@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 #import "NavBarView.h"
-
+#import "KKEventPointMgr.h"
 @interface BaseViewController ()
 
 @end

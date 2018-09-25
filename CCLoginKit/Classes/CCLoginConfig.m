@@ -11,6 +11,7 @@ NSString * const CCLoginConfigDidLoginSuccess = @"CCLoginConfigDidLoginSuccess";
 NSString * const CCLoginConfigDidLogOut = @"CCLoginConfigDidLogOut";
 
 #import "CCLoginConfig.h"
+#import "CC_ClassyExtend.h"
 
 @implementation CCLoginConfig
 
@@ -31,6 +32,7 @@ NSString * const CCLoginConfigDidLogOut = @"CCLoginConfigDidLogOut";
 }
 
 -(void)setUpInfo{
+    
     self.needRealName = NO;
     self.halfOpen = NO;
 }

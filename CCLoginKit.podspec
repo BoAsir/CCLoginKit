@@ -32,11 +32,12 @@ Pod::Spec.new do |s|
 
   s.source_files = 'CCLoginKit/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'CCLoginKit' => ['CCLoginKit/Assets/*.png']
-  # }
-
-  #  s.public_header_files = 'Pod/Classes/CCLoginPrefix.h'
+  #s.resource_bundles = {
+  #  'CCLoginKit' => ['CCLoginKit/Assets/*.png']
+  #}
+  # s.resources = 'CCLoginKit/Assets/CCLoginResource.bundle'
+  s.resources = 'CCLoginKit/Assets/**/*'
+  s.public_header_files = 'CCLoginKit/CCLoginPrefix.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   s.dependency 'AFNetworking'

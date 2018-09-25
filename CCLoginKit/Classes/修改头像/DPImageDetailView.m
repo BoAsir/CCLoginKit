@@ -8,7 +8,8 @@
 
 #import "DPImageDetailView.h"
 #import "DPToast.h"
-
+#import "Masonry.h"
+#import "CCMacros.h"
 @interface DPZoomScrollView : UIScrollView <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIImageView *imageView;

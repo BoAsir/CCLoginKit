@@ -16,6 +16,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import <objc/runtime.h>
 #import "MBProgressHUD.h"
+#import "Masonry.h"
+#import "CCMacros.h"
 /**
  *  第一个相机的Cell
  */

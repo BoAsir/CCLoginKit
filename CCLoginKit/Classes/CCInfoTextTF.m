@@ -7,7 +7,10 @@
 //
 
 #import "CCInfoTextTF.h"
-
+#import "CCMacros.h"
+#import "CC_UIViewExt.h"
+#import "CC_UIHelper.h"
+#import "HHObjectCheck.h"
 CGFloat const CCInfoTextTF_left_space = 5;
 
 @implementation CCInfoTextTF

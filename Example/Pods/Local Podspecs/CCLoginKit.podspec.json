@@ -19,6 +19,8 @@
     "ios": "8.0"
   },
   "source_files": "CCLoginKit/Classes/**/*",
+  "resources": "CCLoginKit/Assets/**/*",
+  "public_header_files": "CCLoginKit/CCLoginPrefix.h",
   "dependencies": {
     "AFNetworking": [
 

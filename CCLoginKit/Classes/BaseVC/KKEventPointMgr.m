@@ -7,7 +7,8 @@
 //
 
 #import "KKEventPointMgr.h"
-
+#import "NSDictionary+BBAdd.h"
+#import "NSMutableDictionary+BBAdd.h"
 @implementation KKEventPointMgr
 
 +(instancetype)shareInstance

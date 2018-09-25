@@ -12,7 +12,10 @@
 #import "DPImageSelectVC.h"
 #import "ALAsset+DPSelectImage.h"
 #import "CCLoginVC.h"
-
+#import "MaskProgressHUD.h"
+#import "AFNetworking.h"
+#import "CCLoginConfig.h"
+#import "CC_NoticeView.h"
 @interface CCRegistSetUserInfoVC ()
 @property (nonatomic, strong) UIImageView *uploadPortraitImg;
 @property (nonatomic, strong) UIImageView *addIcon;

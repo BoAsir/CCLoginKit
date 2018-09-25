@@ -7,6 +7,9 @@
 //
 
 #import "MaskProgressHUD.h"
+#import "CCMacros.h"
+#import "CC_UIHelper.h"
+#import "CC_UIViewExt.h"
 @interface MaskProgressHUD()
 @property (nonatomic,strong) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic,strong) UILabel *titleLab;

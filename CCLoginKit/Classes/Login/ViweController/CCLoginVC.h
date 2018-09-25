@@ -6,7 +6,6 @@
 //  Copyright © 2018年 杭州鼎代. All rights reserved.
 //
 
-
 #import "BaseViewController.h"
 typedef void (^HHSLoginSuccess)(NSDictionary *loginInfo);
 

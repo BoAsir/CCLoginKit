@@ -9,7 +9,8 @@
 #import "UserStateManager.h"
 #import "JKEncrypt.h"
 #import "CCLoginVC.h"
-
+#import "CC_CodeLib.h"
+#import "CCLoginConfig.h"
 @interface UserStateManager(){
     
 }

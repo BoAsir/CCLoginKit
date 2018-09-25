@@ -7,6 +7,7 @@
 //
 
 #import "DPTitleTableViewCell.h"
+#import "Masonry.h"
 
 @implementation DPTitleTableViewCell
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{

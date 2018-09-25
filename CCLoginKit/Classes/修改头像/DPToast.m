@@ -7,7 +7,7 @@
 //
 
 #import "DPToast.h"
-
+#import "CCMacros.h"
 #define kToastBottomMetric 60    //与底部的默认距离
 #define kToastMarginWidth 20     //文字和黑框左右最下间距
 #define kToastMarginHeigh 25     //文字和黑框上下间距和

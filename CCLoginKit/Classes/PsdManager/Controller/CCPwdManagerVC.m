@@ -10,7 +10,7 @@
 #import "CCModifyPwdVC.h"
 #import "CCPhoneNOAndVerifyCodeVC.h"
 #import "CCTwoPwdTFVC.h"
-
+#import "UserStateManager.h"
 NSString *const kk_pwd_manager_cell_id = @"kk_pwd_manager_cell_id";
 
 @interface CCPwdManagerVC ()<UITableViewDelegate,UITableViewDataSource>

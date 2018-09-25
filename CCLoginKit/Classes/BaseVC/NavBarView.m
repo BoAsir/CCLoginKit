@@ -7,6 +7,7 @@
 //
 
 #import "NavBarView.h"
+#import "CCMacros.h"
 
 @implementation NavBarView
 

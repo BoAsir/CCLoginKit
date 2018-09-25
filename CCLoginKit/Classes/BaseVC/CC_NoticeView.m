@@ -6,6 +6,8 @@
 //  Copyright © 2015年 apple. All rights reserved.
 //
 #import "CC_NoticeView.h"
+#import "CCMacros.h"
+#import "CC_UIHelper.h"
 
 @implementation CC_NoticeView
 @synthesize noticeString;

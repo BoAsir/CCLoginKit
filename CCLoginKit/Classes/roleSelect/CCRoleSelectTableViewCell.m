@@ -7,7 +7,7 @@
 //
 
 #import "CCRoleSelectTableViewCell.h"
-
+#import "CC_Share.h"
 @interface CCRoleSelectTableViewCell()
 @property (nonatomic, strong)UILabel *nameLab;
 @property (nonatomic, strong)UIImageView *selectedImageV;

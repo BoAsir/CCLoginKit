@@ -7,6 +7,8 @@
 //
 
 #import "NoContentReminderView.h"
+#import "CC_UIHelper.h"
+#import "CCMacros.h"
 @interface NoContentReminderView()
 @property (nonatomic,strong) UIImage *image;
 @property (nonatomic,assign) CGFloat imageTopY;

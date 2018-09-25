@@ -10,6 +10,7 @@
 #import "CSNetWorkConfig.h"
 #import "CCLoginVC.h"
 #import "CCViewController.h"
+#import "CCLoginPrefix.h"
 @implementation CCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -21,11 +22,12 @@
     
     
     [[CC_UIHelper getInstance]initUIDemoWidth:375 andHeight:750];
-//    NSString *absoluteFilePath = [[NSBundle mainBundle] pathForResource:@"stylesheet" ofType:@"cas"];// pathForResource:@"stylesheet" ofType:@"cas"];
     
-    NSString *absoluteFilePath=CASAbsoluteFilePath(@"stylesheet.cas");
+    NSString *absoluteFilePath = [[NSBundle mainBundle] pathForResource:@"CCLoginKit/Classes/stylesheet" ofType:@"cas"];
+    //    NSString *absoluteFilePath=CASAbsoluteFilePath(@"stylesheet.cas");
     [CC_ClassyExtend initSheet:absoluteFilePath];
     [CC_ClassyExtend parseCas];
+    
     [CSNetWorkConfig configHTTPHeaders];
     [CCLoginConfig shareInstance].headUrl = [CSNetWorkConfig currentUrl];
     

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CC_Share.h"
 typedef NS_ENUM(NSUInteger, BBNavBarType) {
     BBNavBarTypeRed,           // 红色背景 白色标题
     BBNavBarTypeWhite,         //白色背景  黑色标题
@@ -20,7 +20,7 @@ typedef NS_ENUM(NSUInteger, BBNavBarType) {
 
 }
 
-@property (nonatomic,retain) CC_Button *backButton;
+@property (nonatomic, strong) CC_Button *backButton;
 @property (nonatomic,strong) UILabel  *titleLabel;
 @property(nonatomic,strong)UIImage *navBarBackgroundImage;
 @property(nonatomic,strong) UIImageView *navBarImageView;

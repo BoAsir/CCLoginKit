@@ -8,7 +8,9 @@
 
 #import "CCRoleCreateViewController.h"
 #import "CCRoleRequest.h"
-
+#import "CC_NoticeView.h"
+#import "MaskProgressHUD.h"
+#import "CCLoginConfig.h"
 @interface CCRoleCreateViewController (){
     
 }

@@ -7,8 +7,14 @@
 //
 
 #import "CCUserInfoRequest.h"
-
-
+#import "UserStateManager.h"
+#import "NSDictionary+BBAdd.h"
+#import "NSMutableDictionary+BBAdd.h"
+#import "CC_GHttpSessionTask.h"
+#import "CCLoginConfig.h"
+#import "CCMacros.h"
+#import "CC_Share.h"
+#import "CC_NoticeView.h"
 @implementation CCUserInfoRequest
 
 + (void)requestUserInfo{

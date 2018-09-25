@@ -8,6 +8,7 @@
 
 #import "InsideLoadingVIew.h"
 #import "UIImage+gifChange.h"
+#import "CC_UIHelper.h"
 
 @implementation InsideLoadingVIew
 +(instancetype)loadingStartAnimatingAndAddToView:(UIView *)view

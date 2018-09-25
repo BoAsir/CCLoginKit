@@ -27,6 +27,7 @@
 #import "CCInfoTextTF.h"
 #import "CCLoginConfig.h"
 #import "CCLoginPrefix.h"
+#import "CCMacros.h"
 #import "CCRoleRequest.h"
 #import "CCUserInfoRequest.h"
 #import "CC_CodeLib.h"

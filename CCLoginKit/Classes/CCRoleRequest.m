@@ -8,7 +8,12 @@
 
 #import "CCRoleRequest.h"
 #import "CCUserInfoRequest.h"
-
+#import "CC_Share.h"
+#import "UserStateManager.h"
+#import "MaskProgressHUD.h"
+#import "CCLoginConfig.h"
+#import "CC_NoticeView.h"
+#import "CC_CodeLib.h"
 @implementation CCRoleRequest
 
 + (void)saveLoginInfo:(NSDictionary *)response{

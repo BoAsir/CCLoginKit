@@ -7,6 +7,7 @@
 //
 
 #import "GNavView.h"
+#import "CCMacros.h"
 
 @implementation GNavView
 @synthesize titleString,titleLabel;

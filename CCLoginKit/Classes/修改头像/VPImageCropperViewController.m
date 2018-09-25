@@ -7,6 +7,7 @@
 //
 #import "VPImageCropperViewController.h"
 #import "GNavView.h"
+#import "CCMacros.h"
 #define SCALE_FRAME_Y 100.0f
 #define BOUNDCE_DURATION 0.3f
 
