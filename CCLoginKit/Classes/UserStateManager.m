@@ -11,6 +11,7 @@
 #import "CCLoginVC.h"
 #import "CC_CodeLib.h"
 #import "CCLoginConfig.h"
+#import "CC_Share.h"
 @interface UserStateManager(){
     
 }
