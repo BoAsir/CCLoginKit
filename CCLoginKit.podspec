@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CCLoginKit'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
   s.summary          = '登录组件'
 
 # This description is used to generate tags and improve search results.
@@ -37,8 +37,8 @@ Pod::Spec.new do |s|
   #}
   # s.resources = 'CCLoginKit/Assets/CCLoginResource.bundle'
   s.resources = 'CCLoginKit/Assets/**/*'
-  s.public_header_files = 'Pod/Classes/**/*.h'
-   s.frameworks = 'UIKit'
+  s.public_header_files = 'CCLoginKit/Classes/**/*.h'
+   s.frameworks = 'UIKit','Foundation'
   # s.dependency 'AFNetworking', '~> 2.3'
   s.dependency 'AFNetworking'
   s.dependency 'Masonry'

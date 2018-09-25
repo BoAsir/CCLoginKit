@@ -15,7 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - bench_ios (1.3.23)
-  - CCLoginKit (0.1.5):
+  - CCLoginKit (0.1.6):
     - AFNetworking
     - bench_ios
     - Masonry
@@ -37,7 +37,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   bench_ios: c5a447486f42c4519b68c5036b3077ccfabb648c
-  CCLoginKit: f2badd4fa00ba65bf59ffe2e78462686ad1a1f3f
+  CCLoginKit: 7b65b4cc54df701c5e230a07e6e39fe3c1d755f6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
 PODFILE CHECKSUM: a6a17e3ac273a3b994292dda18854aabac82a4e4

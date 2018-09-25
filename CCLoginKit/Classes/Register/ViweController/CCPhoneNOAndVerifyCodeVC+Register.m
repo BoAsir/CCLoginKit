@@ -7,6 +7,7 @@
 //
 
 #import "CCPhoneNOAndVerifyCodeVC+Register.h"
+#import "CC_Share.h"
 @implementation CCPhoneNOAndVerifyCodeVC (Register)
 
 -(CGFloat)addRegistProtocolUITopY:(CGFloat)Y{

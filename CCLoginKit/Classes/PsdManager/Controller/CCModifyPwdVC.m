@@ -9,7 +9,7 @@
 #import "CCModifyPwdVC.h"
 #import "CCInfoTextTF.h"
 #import "CCPhoneNOAndVerifyCodeVC.h"
-
+#import "CC_Share.h"
 CGFloat CCModifyPwdVC_left_space = 20;
 
 @interface CCModifyPwdVC ()

@@ -17,6 +17,7 @@
 #import "CCLoginConfig.h"
 #import "MaskProgressHUD.h"
 #import "UserStateManager.h"
+#import "CC_Share.h"
 CGFloat const left_edge = 35;
 
 @interface CCLoginVC ()<CCAccountAlertViewDelegate>

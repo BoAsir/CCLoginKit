@@ -1,6 +1,6 @@
 {
   "name": "CCLoginKit",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "summary": "登录组件",
   "description": "登录组件：登录、注册、忘记密码、切换角色登录、找回支付和登录密码",
   "homepage": "https://github.com/BoASir/CCLoginKit",
@@ -13,15 +13,18 @@
   },
   "source": {
     "git": "https://github.com/BoASir/CCLoginKit.git",
-    "tag": "0.1.5"
+    "tag": "0.1.6"
   },
   "platforms": {
     "ios": "8.0"
   },
   "source_files": "CCLoginKit/Classes/**/*",
   "resources": "CCLoginKit/Assets/**/*",
-  "public_header_files": "Pod/Classes/**/*.h",
-  "frameworks": "UIKit",
+  "public_header_files": "CCLoginKit/Classes/**/*.h",
+  "frameworks": [
+    "UIKit",
+    "Foundation"
+  ],
   "dependencies": {
     "AFNetworking": [
 

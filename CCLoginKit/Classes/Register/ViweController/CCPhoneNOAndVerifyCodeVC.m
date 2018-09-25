@@ -15,6 +15,7 @@
 #import "CCLoginConfig.h"
 #import "NSDictionary+BBAdd.h"
 #import "NSMutableDictionary+BBAdd.h"
+#import "CC_Share.h"
 CGFloat PhoneNOAndVerifyCodeVC_left_space = 20;
 
 @interface CCPhoneNOAndVerifyCodeVC ()<UITextFieldDelegate>

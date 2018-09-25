@@ -14,6 +14,7 @@
 #import "CC_NoticeView.h"
 #import "MaskProgressHUD.h"
 #import "CCLoginConfig.h"
+#import "CC_Share.h"
 CGFloat TwoPwdTFVC_left_space = 20;
 
 @interface CCTwoPwdTFVC ()

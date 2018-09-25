@@ -16,6 +16,7 @@
 #import "AFNetworking.h"
 #import "CCLoginConfig.h"
 #import "CC_NoticeView.h"
+#import "CC_Share.h"
 @interface CCRegistSetUserInfoVC ()
 @property (nonatomic, strong) UIImageView *uploadPortraitImg;
 @property (nonatomic, strong) UIImageView *addIcon;

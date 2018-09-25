@@ -11,6 +11,7 @@
 #import "CCLoginVC.h"
 #import "CCViewController.h"
 #import "CCLoginPrefix.h"
+#import "CC_Share.h"
 @implementation CCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

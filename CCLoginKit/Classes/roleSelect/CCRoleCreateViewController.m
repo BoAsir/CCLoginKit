@@ -11,6 +11,7 @@
 #import "CC_NoticeView.h"
 #import "MaskProgressHUD.h"
 #import "CCLoginConfig.h"
+#import "CC_Share.h"
 @interface CCRoleCreateViewController (){
     
 }

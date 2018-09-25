@@ -13,6 +13,7 @@
 #import "MaskProgressHUD.h"
 #import "CCLoginConfig.h"
 #import "CC_NoticeView.h"
+#import "CC_Share.h"
 @interface CCRoleSelectViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,retain) UIView *displayV;
