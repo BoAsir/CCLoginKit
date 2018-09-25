@@ -47,18 +47,18 @@ static const char  user_defined_base_navigationbar_view_key;
     }else{
         udNavBarView.backButton.hidden = YES;
     }
-
-    [udNavBarView.backButton addTappedBlock:^(UIButton *button) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        if ([strongSelf canPerformAction:@selector(pressBackButton) withSender:nil]) {
-            [strongSelf performSelector:@selector(pressBackButton)];
-
-        }else if(strongSelf.navigationController.viewControllers.count>1){
-            [strongSelf.navigationController popViewControllerAnimated:YES];
-        }else{
-            [strongSelf dismissViewControllerAnimated:YES completion:nil];
-        }
-    }];
+    [udNavBarView.backButton addTarget:self action:@selector(tagpped:) forControlEvents:UIControlEventTouchUpInside];
+//    [udNavBarView.backButton addTappedBlock:^(UIButton *button) {
+//        __strong typeof(weakSelf) strongSelf = weakSelf;
+//        if ([strongSelf canPerformAction:@selector(pressBackButton) withSender:nil]) {
+//            [strongSelf performSelector:@selector(pressBackButton)];
+//
+//        }else if(strongSelf.navigationController.viewControllers.count>1){
+//            [strongSelf.navigationController popViewControllerAnimated:YES];
+//        }else{
+//            [strongSelf dismissViewControllerAnimated:YES completion:nil];
+//        }
+//    }];
 
 
     switch (barType) {
@@ -96,7 +96,16 @@ static const char  user_defined_base_navigationbar_view_key;
     [self.view addSubview:udNavBarView];
 }
 
-
+-(void)tagpped:(UIButton*)sender{
+    if ([self canPerformAction:@selector(pressBackButton) withSender:nil]) {
+        [self performSelector:@selector(pressBackButton)];
+        
+    }else if(self.navigationController.viewControllers.count>1){
+        [self.navigationController popViewControllerAnimated:YES];
+    }else{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
 
 -(NavBarView *)UD_navigationBarView
 {
