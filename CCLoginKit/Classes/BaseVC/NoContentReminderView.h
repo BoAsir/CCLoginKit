@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CC_UIViewExt.h"
 typedef NS_ENUM(NSInteger, NoContentStyle) {
     NoContentReminderConnectError
 };

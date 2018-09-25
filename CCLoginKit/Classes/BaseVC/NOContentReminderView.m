@@ -7,6 +7,7 @@
 //
 
 #import "NoContentReminderView.h"
+#import "CC_UIViewExt.h"
 #import "CC_UIHelper.h"
 #import "CCMacros.h"
 @interface NoContentReminderView()
