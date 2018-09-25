@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'CCLoginKit'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of CCLoginKit.'
+  s.summary          = '登录组件'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  登录组件：登录、注册、忘记密码、切换角色登录、找回支付和登录密码
                        DESC
 
   s.homepage         = 'https://github.com/BoASir/CCLoginKit'
@@ -36,7 +36,10 @@ TODO: Add long description of the pod here.
   #   'CCLoginKit' => ['CCLoginKit/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  #  s.public_header_files = 'Pod/Classes/CCLoginPrefix.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'AFNetworking'
+  s.dependency 'Masonry'
+  s.dependency 'bench_ios'
 end

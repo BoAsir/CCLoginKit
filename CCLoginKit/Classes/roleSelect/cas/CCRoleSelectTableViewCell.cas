@@ -1,0 +1,44 @@
+CC_Label.CCRoleSelectTableViewCell_label_name{
+marginTop 5
+marginLeft 15
+widthSameAsScreen "-30"
+height 45
+textColor "666666"
+fontSize 16
+}
+
+UIImageView.CCRoleSelectTableViewCell_image_selected{
+alignRight "CCRoleSelectTableViewCell_label_name"
+marginTop 15
+marginRight 0
+width 20
+height 20
+backgroundImage "kk_role_check"
+}
+
+UIImageView.CCRoleSelectTableViewCell_image_add{
+marginTop 20
+marginLeft 20
+width 15
+height 15
+backgroundImage "kk_role_add"
+}
+
+CC_Label.CCRoleSelectTableViewCell_label_add{
+toRightOf CCRoleSelectTableViewCell_image_add
+marginTop 10
+marginLeft 10
+width 300
+height 35
+text "创建新角色"
+textColor "2A6FE0"
+fontSize 14
+}
+
+CC_View.CCRoleSelectTableViewCell_view_line{
+below CCRoleSelectTableViewCell_label_name
+marginLeft 15
+widthSameAs CCRoleSelectTableViewCell_label_name
+height 1
+backgroundColor "ECECEC"
+}

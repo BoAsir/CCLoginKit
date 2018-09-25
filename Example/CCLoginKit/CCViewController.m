@@ -14,12 +14,23 @@
 
 @implementation CCViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [self initViews];
 }
 
+-(void)initViews{
+    CC_Button* logOutBtn = [[CC_Button alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+    logOutBtn.center = self.view.center;
+    logOutBtn.backgroundColor = [UIColor redColor];
+    [logOutBtn setTitle:@"登出" forState:UIControlStateNormal];
+    [self.view addSubview:logOutBtn];
+    [logOutBtn addTappedBlock:^(UIButton *button) {
+        //点击登出按钮
+        [[UserStateManager shareInstance] logoutAndSetNil];
+        [[UserStateManager shareInstance]presentLoginVC];
+    }];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -1,0 +1,6 @@
+framework module Rich {
+  umbrella header "bench_ios-umbrella.h"
+
+  export *
+  module * { export * }
+}

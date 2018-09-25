@@ -1,0 +1,33 @@
+{
+  "name": "CCLoginKit",
+  "version": "0.1.0",
+  "summary": "登录组件",
+  "description": "登录组件：登录、注册、忘记密码、切换角色登录、找回支付和登录密码",
+  "homepage": "https://github.com/BoASir/CCLoginKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "BoASir": "992816613@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/BoASir/CCLoginKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CCLoginKit/Classes/**/*",
+  "dependencies": {
+    "AFNetworking": [
+
+    ],
+    "Masonry": [
+
+    ],
+    "bench_ios": [
+
+    ]
+  }
+}
