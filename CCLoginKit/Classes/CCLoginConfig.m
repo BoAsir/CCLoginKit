@@ -12,6 +12,8 @@ NSString * const CCLoginConfigDidLogOut = @"CCLoginConfigDidLogOut";
 
 #import "CCLoginConfig.h"
 #import "CC_ClassyExtend.h"
+#import "CCMacros.h"
+#import "UserStateManager.h"
 
 @implementation CCLoginConfig
 
@@ -52,5 +54,19 @@ NSString * const CCLoginConfigDidLogOut = @"CCLoginConfigDidLogOut";
         NSAssert(NO,@"请先配置登录请求头headUrl");
         return nil;
     }
+}
++(void)configHTTPHeaders:(NSString*)appName{
+    [CCLoginConfig shareInstance].appName = appName;
+    //设置请求头
+    NSMutableDictionary *headers = [[NSMutableDictionary alloc]init];
+    [headers setObject:appName forKey:@"appName"];
+    [headers setObject:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] forKey:@"appVersion"];
+    [headers setObject:[NSString stringWithFormat:@"IOS_VERSION%fSCREEN_HEIGHT%d",IOS_VERSION,(int)SCREEN_HEIGHT] forKey:@"appUserAgent"];
+    
+    [[CC_HttpTask getInstance] setRequestHTTPHeaderFieldDic:headers];
+    
+    [[CC_HttpTask getInstance] addResponseLogic:@"SIGN_REQUIRED" logicStr:@"response,error,name=SIGN_REQUIRED" stop:0 popOnce:1 logicBlock:^(NSDictionary *resultDic) {
+        [[UserStateManager shareInstance]presentLoginVC];
+    }];
 }
 @end

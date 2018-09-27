@@ -12,6 +12,7 @@
 #import "MaskProgressHUD.h"
 #import "CCLoginConfig.h"
 #import "CC_Share.h"
+#import "UserStateManager.h"
 @interface CCRoleCreateViewController (){
     
 }
@@ -42,7 +43,7 @@
     _nickNameTF.cas_styleClass=@"CCRoleCreateViewController_view_input";
     
     _defaultBt=[CC_UIAtom initAt:_displayV name:@"CCRoleCreateViewController_bt_default" class:[CC_Button class]];
-    [_defaultBt setBackgroundImage:[UIImage imageNamed:@"kk_regiest_agree_protocol"] forState:UIControlStateSelected];
+    [_defaultBt setBackgroundImage:[UIImage imageNamed:@"kk_regiest_agree_protocol" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateSelected];
     _defaultBt.selected=YES;
     
     [CC_UIAtom initAt:_displayV name:@"CCRoleCreateViewController_label_default" class:[CC_Label class]];
@@ -98,7 +99,8 @@
     [para setObject:textStr forKey:@"loginName"];
     MaskProgressHUD *HUD = [MaskProgressHUD hudStartAnimatingAndAddToView:self.view];
     WS(weakSelf);
-    [[CC_HttpTask getInstance]post:[CCLoginConfig loginHeadUrl] params:para model:nil finishCallbackBlock:^(NSString *error, ResModel *resmodel) {
+    [[UserStateManager shareInstance].authTask post:[CCLoginConfig loginHeadUrl] params:para model:nil finishCallbackBlock:^(NSString *error, ResModel *resmodel) {
+
         [HUD stop];
         if (error) {
             [CC_NoticeView showError:error];

@@ -60,8 +60,8 @@
 - (UIImageView *)arrowView {
     if (_arrowView == nil) {
         _arrowView = [[UIImageView alloc] init];
-        _arrowView.image = [UIImage imageNamed:@"购彩记录上拉"] ;
-        _arrowView.highlightedImage = [UIImage imageNamed:@"购彩记录下拉"] ;
+        _arrowView.image = [UIImage imageNamed:@"购彩记录上拉" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] ;
+        _arrowView.highlightedImage = [UIImage imageNamed:@"购彩记录下拉" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] ;
      }
     return _arrowView;
 }

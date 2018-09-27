@@ -66,6 +66,8 @@
 		8D920560BDF801C5BB38FE52 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C0E6F7772159C436005B030B /* CSNetWorkConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSNetWorkConfig.m; sourceTree = "<group>"; };
 		C0E6F7782159C437005B030B /* CSNetWorkConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSNetWorkConfig.h; sourceTree = "<group>"; };
+		C0E6F818215B8909005B030B /* styleSheet2.cas */ = {isa = PBXFileReference; lastKnownFileType = text; path = styleSheet2.cas; sourceTree = "<group>"; };
+		C0E6F819215B8A8B005B030B /* testStyleSheet.cas */ = {isa = PBXFileReference; lastKnownFileType = text; path = testStyleSheet.cas; sourceTree = "<group>"; };
 		CF2DE3709D636053410932CF /* Pods_CCLoginKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCLoginKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF65D7AA9710171C6C61963 /* Pods-CCLoginKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCLoginKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCLoginKit_Tests/Pods-CCLoginKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F5DCCF590F45419DD5900D01 /* Pods_CCLoginKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCLoginKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +141,8 @@
 				6003F59D195388D20070C39A /* CCAppDelegate.m */,
 				C0E6F7782159C437005B030B /* CSNetWorkConfig.h */,
 				C0E6F7772159C436005B030B /* CSNetWorkConfig.m */,
+				C0E6F818215B8909005B030B /* styleSheet2.cas */,
+				C0E6F819215B8A8B005B030B /* testStyleSheet.cas */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* CCViewController.h */,
 				6003F5A6195388D20070C39A /* CCViewController.m */,

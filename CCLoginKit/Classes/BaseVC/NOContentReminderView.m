@@ -68,7 +68,7 @@
         self.userInteractionEnabled = NO;
         if (style == NoContentReminderConnectError) {
             UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 64+[ccui getRH:40], [ccui getRH:584.0/3], [ccui getRH:417.0/3])];
-            imageV.image = [UIImage imageNamed:@"网络连接错误"];
+            imageV.image = [UIImage imageNamed:@"网络连接错误" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
             imageV.center = CGPointMake(self.center.x, imageV.center.y);
             [self addSubview:imageV];
             

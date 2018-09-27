@@ -23,13 +23,15 @@
     
     
     [[CC_UIHelper getInstance]initUIDemoWidth:375 andHeight:750];
-    
-    NSString *absoluteFilePath = [[NSBundle mainBundle] pathForResource:@"CCLoginKit/Classes/stylesheet" ofType:@"cas"];
-    //    NSString *absoluteFilePath=CASAbsoluteFilePath(@"stylesheet.cas");
+    NSString *absoluteFilePath = [[NSBundle bundleForClass:NSClassFromString(@"CCLoginVC")] pathForResource:@"stylesheet" ofType:@"cas"];
+//        NSString *absoluteFilePath2=CASAbsoluteFilePath(@"styleSheet2.cas");
     [CC_ClassyExtend initSheet:absoluteFilePath];
+    
+//    [CC_ClassyExtend initSheet:absoluteFilePath2];
+    
     [CC_ClassyExtend parseCas];
     
-    [CSNetWorkConfig configHTTPHeaders];
+    [CCLoginConfig configHTTPHeaders:@"kk_iphone"];
     [CCLoginConfig shareInstance].headUrl = [CSNetWorkConfig currentUrl];
     
     [self addNotifications];
@@ -67,13 +69,13 @@
     UIViewController *c1=[[UIViewController alloc]init];
     c1.view.backgroundColor=[UIColor greenColor];
     c1.tabBarItem.title=@"消息";
-    c1.tabBarItem.image=[UIImage imageNamed:@"attention_selected_tab_icon"];
+    c1.tabBarItem.image=[UIImage imageNamed:@"attention_selected_tab_icon" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
     c1.tabBarItem.badgeValue=@"123";
     
     CCViewController *c2=[[CCViewController alloc]init];
     c2.view.backgroundColor=[UIColor cyanColor];
     c2.tabBarItem.title=@"联系人";
-    c2.tabBarItem.image=[UIImage imageNamed:@"bazaar_selected_tab_icon"];
+    c2.tabBarItem.image=[UIImage imageNamed:@"bazaar_selected_tab_icon"  inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
     
     _tabbarC.viewControllers=@[c1,c2];
     

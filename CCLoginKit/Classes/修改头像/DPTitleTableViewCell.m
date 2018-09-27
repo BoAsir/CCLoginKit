@@ -73,7 +73,7 @@
 -(UIButton *)selectBtn{
     if (_selectBtn == nil) {
         _selectBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-        [_selectBtn setBackgroundImage:[UIImage imageNamed:@"选择图片_下拉_勾"] forState:UIControlStateNormal];
+        [_selectBtn setBackgroundImage:[UIImage imageNamed:@"选择图片_下拉_勾" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
 //        _selectBtn.backgroundColor = [UIColor orangeColor];
     }
     return _selectBtn;

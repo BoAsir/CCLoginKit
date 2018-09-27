@@ -27,12 +27,12 @@
 
         self.frame=CGRectMake(0, 0, SCREEN_WIDTH,STATUS_AND_NAV_BAR_HEIGHT);
         _navBarImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-        _navBarImageView.image = [UIImage imageNamed:@"NavBar64"];
+        _navBarImageView.image = [UIImage imageNamed:@"NavBar64" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
 
         [self addSubview:_navBarImageView];
         _navBarImageView.hidden = YES;
 
-        UIImage *backImage=UIIMAGE(@"white_navBack_arrow_icon");
+        UIImage *backImage= [UIImage imageNamed:@"white_navBack_arrow_icon" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
         self.backgroundColor = RGB(246, 63, 63);
         _backButton=[CC_Button buttonWithType:UIButtonTypeCustom];
 

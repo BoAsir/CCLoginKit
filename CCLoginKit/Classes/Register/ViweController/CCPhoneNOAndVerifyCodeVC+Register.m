@@ -14,8 +14,8 @@
     self.agreeRegistProtocolButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.agreeRegistProtocolButton.frame = CGRectMake( [ccui getRH:PhoneNOAndVerifyCodeVC_left_space], Y + [ccui getRH:5], [ccui getRH:40], [ccui getRH:40]);
     self.agreeRegistProtocolButton.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
-    [self.agreeRegistProtocolButton setImage:[UIImage imageNamed:@"kk_regiest_agree_protocol"] forState:UIControlStateSelected];
-    [self.agreeRegistProtocolButton setImage:[UIImage imageNamed:@"kk_regiest_unagree_protocol"] forState:UIControlStateNormal];
+    [self.agreeRegistProtocolButton setImage:[UIImage imageNamed:@"kk_regiest_agree_protocol" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateSelected];
+    [self.agreeRegistProtocolButton setImage:[UIImage imageNamed:@"kk_regiest_unagree_protocol" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
     [self.agreeRegistProtocolButton addTarget:self action:@selector(agreeRegistProtocolButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     self.agreeRegistProtocolButton.selected = YES;
     [self.view addSubview:self.agreeRegistProtocolButton];

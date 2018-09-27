@@ -55,7 +55,7 @@ alpha:1.0]
 #define CurrentAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 /** 简写*/
 #define UIF(f) [UIFont systemFontOfSize:f]
-#define UIIMAGE(a) [UIImage imageNamed:a]
+//#define UIIMAGE(a) [UIImage imageNamed:a]
 #define new(T)        [[T alloc] init]
 
 // 判断iPhone

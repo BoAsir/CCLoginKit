@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class CC_HttpTask;
 @interface UserStateManager : NSObject
 
 @property (nonatomic,retain) NSString *accountType;///>用户的账号类型
@@ -30,6 +30,9 @@
 
 @property (nonatomic,retain) NSString *authedUserId;
 @property (nonatomic,retain) NSString *oneAuthId;
+
+@property (nonatomic,retain) CC_HttpTask *authTask;
+
 @property (nonatomic,retain) NSString *uuid;
 @property (nonatomic,retain) NSString *loginName;
 @property (nonatomic,retain) NSString *loginUserAvatarUrl;
@@ -58,6 +61,10 @@
 - (void)remove;
 
 - (void)logoutAndSetNil;
+
+- (void)setAuthSignKey;
+
+- (void)setUserSignKey;
 
 #pragma mark- 管理自己的登录
 

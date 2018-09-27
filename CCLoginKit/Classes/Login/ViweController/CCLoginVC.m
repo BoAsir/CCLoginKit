@@ -44,9 +44,8 @@ CGFloat const left_edge = 35;
 
 -(void)createBackgroundView{
     self.view.backgroundColor = [UIColor whiteColor];
-    
     UIImageView *backDownImageV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-    UIImage *backDownImage = [UIImage imageNamed:@"login_bottom"];
+    UIImage *backDownImage = [UIImage imageNamed:@"login_bottom" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
     backDownImageV.image = backDownImage;
     [self.view addSubview:backDownImageV];
 
@@ -63,7 +62,7 @@ CGFloat const left_edge = 35;
 {
     //icon
     UIImageView *loginIconImageV = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2-[ccui getRH:40], [ccui getRH:53], [ccui getRH:80], [ccui getRH:80])];
-    loginIconImageV.image = [UIImage imageNamed:@"kk_regist_upload_portrait_image_add"];
+    loginIconImageV.image = [UIImage imageNamed:@"kk_regist_upload_portrait_image_add" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
     [self.view addSubview:loginIconImageV];
     
     //手机号
@@ -88,8 +87,8 @@ CGFloat const left_edge = 35;
     
     //睁眼
     CC_Button *eyeBtn = [[CC_Button alloc] initWithFrame:CGRectMake(0, 0, [ccui getRH:40], [ccui getRH:40])];
-    [eyeBtn setImage:[UIImage imageNamed:@"kk_login_pwd_cant_see"] forState:UIControlStateNormal];
-    [eyeBtn setImage:[UIImage imageNamed:@"kk_login_pwd_can_see"]  forState:UIControlStateSelected];
+    [eyeBtn setImage:[UIImage imageNamed:@"kk_login_pwd_cant_see" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+    [eyeBtn setImage:[UIImage imageNamed:@"kk_login_pwd_can_see" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateSelected];
     eyeBtn.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
     [_pwdTF setRightView:eyeBtn];
     
@@ -107,8 +106,8 @@ CGFloat const left_edge = 35;
     _userDefaultRoleButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _userDefaultRoleButton.frame = CGRectMake([ccui getRH:left_edge], _pwdTF.bottom + [ccui getRH:20], [ccui getRH:40], [ccui getRH:40]);
     _userDefaultRoleButton.imageEdgeInsets =UIEdgeInsetsMake(10, 10, 10, 10);
-    [_userDefaultRoleButton setImage:[UIImage imageNamed:@"kk_regiest_unagree_protocol"] forState:UIControlStateNormal];
-    [_userDefaultRoleButton setImage:[UIImage imageNamed:@"kk_regiest_agree_protocol"] forState:UIControlStateSelected];
+    [_userDefaultRoleButton setImage:[UIImage imageNamed:@"kk_regiest_unagree_protocol" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+    [_userDefaultRoleButton setImage:[UIImage imageNamed:@"kk_regiest_agree_protocol" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateSelected];
     _userDefaultRoleButton.selected = YES;
     [_userDefaultRoleButton addTarget:self action:@selector(userDefaultRoleButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_userDefaultRoleButton];
@@ -269,13 +268,14 @@ CGFloat const left_edge = 35;
             {
                 NSDictionary *response = resmodel.resultDic[@"response"];
                 [UserStateManager shareInstance].oneAuthId=response[@"oneAuthPlatformLogin"][@"oneAuthId"];
-                [ccs saveDefaultKey:@"oneAuthId" andV:response[@"oneAuthPlatformLogin"][@"oneAuthId"]];
-                [[CC_HttpTask getInstance]setExtreDic:@{@"oneAuthId":response[@"oneAuthPlatformLogin"][@"oneAuthId"]}];
-            }
-            
-            NSDictionary*dic = [[NSDictionary alloc] initWithDictionary:result];
-            if (self.userloginSuccessBlock) {
-                self.userloginSuccessBlock(dic);
+//                [ccs saveDefaultKey:@"oneAuthId" andV:response[@"oneAuthPlatformLogin"][@"oneAuthId"]];
+//                [[CC_HttpTask getInstance]setExtreDic:@{@"oneAuthId":response[@"oneAuthPlatformLogin"][@"oneAuthId"]}];
+                [UserStateManager shareInstance].oneAuth_signKey=response[@"oneAuthPlatformLogin"][@"signKey"];
+                [UserStateManager shareInstance].oneAuth_loginKey=response[@"oneAuthPlatformLogin"][@"loginKey"];
+                [ccs saveDefaultKey:@"oneAuthId" andV:[UserStateManager shareInstance].oneAuthId];
+                [ccs saveDefaultKey:@"oneAuth_signKey" andV:[UserStateManager shareInstance].oneAuth_signKey];
+                [ccs saveDefaultKey:@"oneAuth_loginKey" andV:[UserStateManager shareInstance].oneAuth_loginKey];
+                [[UserStateManager shareInstance]setAuthSignKey];
             }
             
             if ([result[@"gotoUserList"] boolValue]&&fromRegister==0) {
@@ -292,6 +292,12 @@ CGFloat const left_edge = 35;
                     [[NSNotificationCenter defaultCenter] postNotificationName:CCLoginConfigDidLoginSuccess object:nil userInfo:@{@"fromRegister":@(fromRegister)}];
                 }
             }
+            
+            NSDictionary*dic = [[NSDictionary alloc] initWithDictionary:result];
+            if (self.userloginSuccessBlock) {
+                self.userloginSuccessBlock(dic);
+            }
+            
         }
     }];
 }

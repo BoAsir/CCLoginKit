@@ -53,7 +53,7 @@
     _uploadPortraitImg = [[UIImageView alloc] init];
     _uploadPortraitImg.frame = CGRectMake(0,STATUS_AND_NAV_BAR_HEIGHT + [ccui getRH:40], 100, 100);
     _uploadPortraitImg.left = SCREEN_WIDTH/2 - _uploadPortraitImg.width/2;
-    _uploadPortraitImg.image = [UIImage imageNamed:@"kk_regist_upload_portrait_image"] ;
+    _uploadPortraitImg.image = [UIImage imageNamed:@"kk_regist_upload_portrait_image" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] ;
     _uploadPortraitImg.userInteractionEnabled = YES ;
     [self.view addSubview:_uploadPortraitImg];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(speechTapped:)];
@@ -63,7 +63,7 @@
     
     _addIcon = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 25, 25)];
     _addIcon.center = CGPointMake(_uploadPortraitImg.right - 15, _uploadPortraitImg.bottom - 15);
-    _addIcon.image = [UIImage imageNamed:@"kk_regist_upload_portrait_image_add"];
+    _addIcon.image = [UIImage imageNamed:@"kk_regist_upload_portrait_image_add" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
     [self.view addSubview:_addIcon];
     
     NSDictionary *attribute = @{NSForegroundColorAttributeName:UIColorFromRGB(0x999999), NSFontAttributeName:[ccui getRFS:15]};
@@ -89,23 +89,23 @@
     _maleSelectButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _maleSelectButton.frame = CGRectMake([ccui getRH:80],chooseSexLabel.bottom + [ccui getRH:39], [ccui getRH:90], [ccui getRH:90]);
     _maleSelectButton.right = SCREEN_WIDTH/2 - [ccui getRH:25];
-    [_maleSelectButton setImage:[UIImage imageNamed:@"icon_regist_upload_male_unselected"] forState:UIControlStateNormal];
-    [_maleSelectButton setImage:[UIImage imageNamed:@"icon_regist_upload_male_selected"] forState:UIControlStateSelected];
+    [_maleSelectButton setImage:[UIImage imageNamed:@"icon_regist_upload_male_unselected" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+    [_maleSelectButton setImage:[UIImage imageNamed:@"icon_regist_upload_male_selected" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateSelected];
     [_maleSelectButton addTarget:self action:@selector(maleSelectButtonClick:)  forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_maleSelectButton];
     
     // 选择女性
     _femaleSelectButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _femaleSelectButton.frame = CGRectMake(SCREEN_WIDTH/2 + [ccui getRH:25],_maleSelectButton.top, _maleSelectButton.width, _maleSelectButton.height);
-    [_femaleSelectButton setImage:[UIImage imageNamed:@"icon_regist_upload_female_unselected"] forState:UIControlStateNormal];
-    [_femaleSelectButton setImage:[UIImage imageNamed:@"icon_regist_upload_female_selected"] forState:UIControlStateSelected];
+    [_femaleSelectButton setImage:[UIImage imageNamed:@"icon_regist_upload_female_unselected" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+    [_femaleSelectButton setImage:[UIImage imageNamed:@"icon_regist_upload_female_selected" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateSelected];
     [_femaleSelectButton addTarget:self action:@selector(femaleSelectButtonClick:)  forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_femaleSelectButton];
     
     
     
     _sexSelectIcon = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, [ccui getRH:20], [ccui getRH:20])];
-    _sexSelectIcon.image = [UIImage imageNamed:@"kk_regist_sex_select"];
+    _sexSelectIcon.image = [UIImage imageNamed:@"kk_regist_sex_select" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
     _sexSelectIcon.hidden = YES;
     [self.view addSubview:_sexSelectIcon];
     

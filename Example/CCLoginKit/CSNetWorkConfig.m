@@ -153,7 +153,7 @@ static NSInteger url_choose = 0;
     
     [[CC_HttpTask getInstance] setRequestHTTPHeaderFieldDic:headers];
     
-    [[CC_HttpTask getInstance] addResponseLogic:@"SIGN_REQUIRED" logicStr:@"response,error,name=SIGN_REQUIRED" stop:1 popOnce:1 logicBlock:^(NSDictionary *resultDic) {
+    [[CC_HttpTask getInstance] addResponseLogic:@"SIGN_REQUIRED" logicStr:@"response,error,name=SIGN_REQUIRED" stop:0 popOnce:1 logicBlock:^(NSDictionary *resultDic) {
         [[UserStateManager shareInstance]presentLoginVC];
     }];
 }

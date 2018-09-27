@@ -14,6 +14,7 @@
 #import "CCLoginConfig.h"
 #import "CC_NoticeView.h"
 #import "CC_Share.h"
+#import "UserStateManager.h"
 @interface CCRoleSelectViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,retain) UIView *displayV;
@@ -82,7 +83,8 @@
     [para setObject:@"USER_LIST_QUERY" forKey:@"service"];
     MaskProgressHUD *HUD = [MaskProgressHUD hudStartAnimatingAndAddToView:self.view];
     __weak typeof(self) weakSelf = self;
-    [[CC_HttpTask getInstance]post:[CCLoginConfig loginHeadUrl] params:para model:nil finishCallbackBlock:^(NSString *error, ResModel *resmodel) {
+    [[UserStateManager shareInstance].authTask post:[CCLoginConfig loginHeadUrl] params:para model:nil finishCallbackBlock:^(NSString *error, ResModel *resmodel) {
+
         [HUD stop];
         if (error) {
             [CC_NoticeView showError:error atView:weakSelf.view];
@@ -104,7 +106,7 @@
     [_roleTab reloadData];
     
     _defaultBt=[CC_UIAtom initAt:_displayV name:@"CCRoleSelectViewController_bt_default" class:[CC_Button class]];
-    [_defaultBt setBackgroundImage:[UIImage imageNamed:@"kk_regiest_agree_protocol"] forState:UIControlStateSelected];
+    [_defaultBt setBackgroundImage:[UIImage imageNamed:@"kk_regiest_agree_protocol" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateSelected];
     _defaultBt.selected=YES;
     
     [CC_UIAtom initAt:_displayV name:@"CCRoleSelectViewController_label_default" class:[CC_Label class]];

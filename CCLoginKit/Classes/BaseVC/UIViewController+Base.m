@@ -70,7 +70,7 @@ static const char  user_defined_base_navigationbar_view_key;
             udNavBarView.barType = BBNavBarTypeWhite;
             [udNavBarView setNavBarBackGroundColor:[UIColor whiteColor]];
             [udNavBarView setNavBarTitleColor:UIColorFromRGB(0x333333)];
-            [udNavBarView.backButton setImage:[[UIImage imageNamed:@"gray_navBack_arrow_icon"]rt_tintedImageWithColor:UIColorFromRGB(0x333333)] forState:UIControlStateNormal];
+            [udNavBarView.backButton setImage:[[UIImage imageNamed:@"gray_navBack_arrow_icon" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil]rt_tintedImageWithColor:UIColorFromRGB(0x333333)] forState:UIControlStateNormal];
         }
             break;
         case BBNavBarTypeClear:

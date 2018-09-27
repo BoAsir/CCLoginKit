@@ -10,6 +10,10 @@
 #import "CCInfoTextTF.h"
 #import "CCPhoneNOAndVerifyCodeVC.h"
 #import "CC_Share.h"
+#import "UserStateManager.h"
+#import "MaskProgressHUD.h"
+#import "CCLoginConfig.h"
+#import "CC_NoticeView.h"
 CGFloat CCModifyPwdVC_left_space = 20;
 
 @interface CCModifyPwdVC ()
@@ -112,6 +116,59 @@ CGFloat CCModifyPwdVC_left_space = 20;
 }
 
 -(void)confirmButtonClick:(UIButton *)sender{
+    [self requestModifyPsd];
+}
+
+- (void)requestModifyPsd{
+    
+    NSString *oldPsdStr=_oldPwdTF.inputTextField.text;
+    NSString *psdStr=_newPwdTF.inputTextField.text;
+    NSString *repeatPsdStr=_repeatPwdTF.inputTextField.text;
+    if (oldPsdStr.length==0) {
+        [CC_NoticeView showError:@"请输入旧密码"];
+        return;
+    }
+    if (psdStr.length==0) {
+        [CC_NoticeView showError:@"请输入新密码"];
+        return;
+    }
+    if (repeatPsdStr.length==0) {
+        [CC_NoticeView showError:@"请再次输入密码"];
+        return;
+    }
+    if (![psdStr isEqualToString:repeatPsdStr]) {
+        [CC_NoticeView showError:@"两次密码输入不一致"];
+        return;
+    }
+    NSMutableDictionary *para = [[NSMutableDictionary alloc] init];
+    if (_VCType==CCModifyLoginPwdType) {
+        
+        [para setObject:@"CHANGE_LOGIN_PASSWORD" forKey:@"service"];
+    }else{
+        
+        [para setObject:@"CHANGE_ACCOUNT_PASSWORD" forKey:@"service"];
+    }
+    [para setObject:oldPsdStr forKey:@"oldLoginPassword"];
+    [para setObject:psdStr forKey:@"newLoginPassword"];
+    
+    MaskProgressHUD *HUD = [MaskProgressHUD hudStartAnimatingAndAddToView:self.view];
+    [[UserStateManager shareInstance].authTask post:[CCLoginConfig loginHeadUrl] params:para model:nil finishCallbackBlock:^(NSString *error, ResModel *resmodel) {
+        [HUD stop];
+        if (error) {
+            [CC_NoticeView showError:error atView:self.view];
+        }else{
+            [_oldPwdTF resignFirstResponder];
+            [_newPwdTF resignFirstResponder];
+            [_repeatPwdTF resignFirstResponder];
+            
+            int index=(int)[[self.navigationController viewControllers]indexOfObject:self];
+            int toIndex;
+            toIndex=index-1;
+            [CC_NoticeView showError:@"修改成功" atView:self.navigationController.viewControllers[toIndex].view];
+            
+            [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:toIndex]animated:YES];
+        }
+    }];
     
 }
 

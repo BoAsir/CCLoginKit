@@ -48,7 +48,7 @@
         }];
         
         UIImageView * topImageView = [[UIImageView alloc] init];
-        topImageView.image =[UIImage imageNamed:@"打赏未设置密码"];
+        topImageView.image =[UIImage imageNamed:@"打赏未设置密码" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
         [self addSubview:topImageView];
         
         [topImageView mas_makeConstraints:^(MASConstraintMaker *make) {

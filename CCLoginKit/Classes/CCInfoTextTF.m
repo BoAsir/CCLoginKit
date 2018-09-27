@@ -74,7 +74,7 @@ CGFloat const CCInfoTextTF_left_space = 5;
 -(void)setupWithIcon:(NSString *)iconName placeholder:(NSString *)holderString
 {
     if (![HHObjectCheck isEmpty:iconName]) {
-        self.iconImg.image = [UIImage imageNamed:iconName];
+        self.iconImg.image = [UIImage imageNamed:iconName inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
     }
     self.inputTextField.placeholder = holderString;
 }

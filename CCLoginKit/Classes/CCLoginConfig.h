@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL needRealName;//是否需要实名认证
 @property (nonatomic, assign) BOOL halfOpen;//是否半开放
 @property (nonatomic, strong) NSURL *headUrl;//请求头
-
+@property (nonatomic, strong) NSString* appName;
 
 +(instancetype)shareInstance;
 
@@ -31,6 +31,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 //请求地址
 +(NSURL *)loginHeadUrl;
+
+//设置请求头appName
++(void)configHTTPHeaders:(NSString*)appName;
+
 @end
 
 NS_ASSUME_NONNULL_END

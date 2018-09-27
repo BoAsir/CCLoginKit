@@ -179,7 +179,7 @@ static NSString *const reuseIdentifier = @"browserCell";
     }];
 
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backBtn setBackgroundImage:[UIImage imageNamed:@"顶部-返回"] forState:(UIControlStateNormal)];
+    [backBtn setBackgroundImage:[UIImage imageNamed:@"顶部-返回" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:(UIControlStateNormal)];
     [backBtn addTarget:self action:@selector(pvt_back) forControlEvents:UIControlEventTouchUpInside];
     [backView addSubview:backBtn];
     [backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -243,8 +243,8 @@ static NSString *const reuseIdentifier = @"browserCell";
 - (UIButton *)selectButton {
     if (_selectButton == nil) {
         _selectButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_selectButton setBackgroundImage:[UIImage imageNamed:@"选择图片_不勾选"] forState:(UIControlStateNormal)];
-        [_selectButton setBackgroundImage:[UIImage imageNamed:@"选择图片_勾选"] forState:(UIControlStateSelected)];
+        [_selectButton setBackgroundImage:[UIImage imageNamed:@"选择图片_不勾选" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:(UIControlStateNormal)];
+        [_selectButton setBackgroundImage:[UIImage imageNamed:@"选择图片_勾选" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:(UIControlStateSelected)];
         [_selectButton addTarget:self action:@selector(pvt_selected:) forControlEvents:UIControlEventTouchUpInside];
     }
 
@@ -258,7 +258,7 @@ static NSString *const reuseIdentifier = @"browserCell";
         [_confrimButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _confrimButton.titleLabel.font = [UIFont systemFontOfSize:16];
         [_confrimButton setTitle:@"完成" forState:UIControlStateNormal];
-        [_confrimButton setBackgroundImage:[UIImage imageNamed:@"加关注-ios"] forState:UIControlStateNormal];
+        [_confrimButton setBackgroundImage:[UIImage imageNamed:@"加关注-ios" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
         [_confrimButton addTarget:self action:@selector(pvt_confirm) forControlEvents:UIControlEventTouchUpInside];
     }
 

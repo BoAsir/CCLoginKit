@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CCLoginKit'
-  s.version          = '0.1.7'
+  s.version          = '0.1.8'
   s.summary          = '登录组件'
 
 # This description is used to generate tags and improve search results.
@@ -31,12 +31,18 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'CCLoginKit/Classes/**/*'
-  
+  #s.resource_bundles = {
+  #   'CCLoginKit' => ['CCLoginKit/Assets/*']
+  #}
   #s.resource_bundles = {
   #  'CCLoginKit' => ['CCLoginKit/Assets/*.png']
   #}
   # s.resources = 'CCLoginKit/Assets/CCLoginResource.bundle'
-  s.resources = 'CCLoginKit/Assets/**/*'
+  # s.resource_bundles ={
+  #    'CCLoginKit' => ['CCLoginKit/Assets/*.*']
+  #}
+  s.resource = 'CCLoginKit/Assets/*.*'
+  
   s.public_header_files = 'CCLoginKit/Classes/**/*.h'
    s.frameworks = 'UIKit','Foundation'
   # s.dependency 'AFNetworking', '~> 2.3'

@@ -89,7 +89,7 @@
     self.backButton=[UIButton buttonWithType:UIButtonTypeCustom];
     self.backButton.frame=CGRectMake(0, STATUS_BAR_HEIGHT, 44, 44);
     self.backButton.imageEdgeInsets = UIEdgeInsetsMake ( 11 , 11 , 11 , 11);
-    [self.backButton setImage:[UIImage imageNamed:@"顶部-返回"] forState:UIControlStateNormal];
+    [self.backButton setImage:[UIImage imageNamed:@"顶部-返回" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
     [self.view addSubview:self.backButton];
     [self.backButton addTarget:self action:@selector(topBackClick:) forControlEvents:UIControlEventTouchUpInside];
     

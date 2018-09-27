@@ -51,7 +51,7 @@
     
     if (_cameraImage == nil) {
         _cameraImage = [[UIImageView alloc] init];
-        _cameraImage.image = [UIImage imageNamed:@"拍摄照片_03.png"];
+        _cameraImage.image = [UIImage imageNamed:@"拍摄照片_03.png" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
         _cameraImage.contentMode = UIViewContentModeScaleAspectFit;
         //        _cameraImage.backgroundColor = [UIColor greenColor];
     }
@@ -231,7 +231,7 @@ static NSString *const kCameraCellIdentifier = @"CameraCellIdentifier";
     self.sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.sureButton.backgroundColor = [UIColor clearColor];
     [self.sureButton setTitle:@"完成()" forState:UIControlStateNormal];
-    [self.sureButton setBackgroundImage:[UIImage imageNamed:@"加关注-ios"] forState:UIControlStateNormal];
+    [self.sureButton setBackgroundImage:[UIImage imageNamed:@"加关注-ios" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
     self.sureButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [self.sureButton setTitleColor:RGB(255, 255, 255) forState:(UIControlStateNormal)];
     [self.sureButton addTarget:self action:@selector(pvt_done:) forControlEvents:UIControlEventTouchUpInside];

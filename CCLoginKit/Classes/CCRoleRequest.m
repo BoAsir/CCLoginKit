@@ -52,7 +52,8 @@
     [para setObject:selectedLoginUserId forKey:@"selectedLoginUserId"];
     [para setObject:@(resetDefaultUser) forKey:@"resetDefaultUser"];
     MaskProgressHUD *HUD = [MaskProgressHUD hudStartAnimatingAndAddToView:controller.view];
-    [[CC_HttpTask getInstance]post:[CCLoginConfig loginHeadUrl] params:para model:nil finishCallbackBlock:^(NSString *error, ResModel *resmodel) {
+    [[UserStateManager shareInstance].authTask post:[CCLoginConfig loginHeadUrl] params:para model:nil finishCallbackBlock:^(NSString *error, ResModel *resmodel) {
+
         [HUD stop];
         if (error) {
             [CC_NoticeView showError:error];
