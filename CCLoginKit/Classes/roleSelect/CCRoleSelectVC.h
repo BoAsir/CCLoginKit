@@ -1,9 +1,8 @@
 //
-//  CCRoleSelectViewController.h
-//  CCTribe
+//  CCRoleSelectVC.h
+//  CCLoginKit
 //
-//  Created by yaya on 2018/7/25.
-//  Copyright © 2018年 杭州鼎代. All rights reserved.
+//  Created by 路飞 on 2018/9/27.
 //
 
 #import "BaseViewController.h"
@@ -13,8 +12,12 @@ typedef NS_ENUM(NSUInteger, RoleEnterType) {
     RoleEnterSwitch,   // 切换角色进入
 };
 
-@interface CCRoleSelectViewController : BaseViewController
+NS_ASSUME_NONNULL_BEGIN
+
+@interface CCRoleSelectVC : BaseViewController
 
 -(instancetype)initWithType:(RoleEnterType)VCType;
 
 @end
+
+NS_ASSUME_NONNULL_END

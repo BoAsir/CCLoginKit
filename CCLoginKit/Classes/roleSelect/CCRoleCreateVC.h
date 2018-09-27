@@ -1,12 +1,10 @@
 //
-//  CCRoleCreateViewController.h
-//  CCTribe
+//  CCRoleCreateVC.h
+//  CCLoginKit
 //
-//  Created by gwh on 2018/7/30.
-//  Copyright © 2018年 杭州鼎代. All rights reserved.
+//  Created by 路飞 on 2018/9/27.
 //
 
-#import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 #import "CCInfoTextTF.h"
 
@@ -15,8 +13,13 @@ typedef NS_ENUM(NSUInteger, CreateEnterType) {
     CreateEnterSwitch,   // 切换角色进入
 };
 
-@interface CCRoleCreateViewController : BaseViewController
+NS_ASSUME_NONNULL_BEGIN
+
+@interface CCRoleCreateVC : BaseViewController
+
 @property(nonatomic,copy) NSString* VCType;
 @property(nonatomic,assign) CreateEnterType type;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -9,6 +9,7 @@
 #import "UIViewController+Base.h"
 #import <objc/runtime.h>
 #import "UIImage+RTTint.h"
+#import "CC_Button.h"
 static const char  user_defined_base_navigationbar_view_key;
 
 

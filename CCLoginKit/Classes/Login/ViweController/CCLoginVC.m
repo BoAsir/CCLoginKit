@@ -11,7 +11,8 @@
 #import "CCInfoTextTF.h"
 #import "CCAccountAlertView.h"
 #import "CCPhoneNOAndVerifyCodeVC.h"
-#import "CCRoleSelectViewController.h"
+//#import "CCRoleSelectViewController.h"
+#import "CCRoleSelectVC.h"
 #import "CCRoleRequest.h"
 #import "CC_NoticeView.h"
 #import "CCLoginConfig.h"
@@ -280,7 +281,7 @@ CGFloat const left_edge = 35;
             
             if ([result[@"gotoUserList"] boolValue]&&fromRegister==0) {
                 //是否跳转到角色列表
-                CCRoleSelectViewController *roleS=[[CCRoleSelectViewController alloc]init];
+                CCRoleSelectVC *roleS=[[CCRoleSelectVC alloc]init];
                 [self.navigationController pushViewController:roleS animated:YES];
             }else{
                 [CC_NoticeView showError:@"登录成功" ];

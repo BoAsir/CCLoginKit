@@ -23,13 +23,13 @@
     
     
     [[CC_UIHelper getInstance]initUIDemoWidth:375 andHeight:750];
-    NSString *absoluteFilePath = [[NSBundle bundleForClass:NSClassFromString(@"CCLoginVC")] pathForResource:@"stylesheet" ofType:@"cas"];
+//    NSString *absoluteFilePath = [[NSBundle bundleForClass:NSClassFromString(@"CCLoginVC")] pathForResource:@"stylesheet" ofType:@"cas"];
 //        NSString *absoluteFilePath2=CASAbsoluteFilePath(@"styleSheet2.cas");
-    [CC_ClassyExtend initSheet:absoluteFilePath];
+//    [CC_ClassyExtend initSheet:absoluteFilePath];
     
 //    [CC_ClassyExtend initSheet:absoluteFilePath2];
     
-    [CC_ClassyExtend parseCas];
+//    [CC_ClassyExtend parseCas];
     
     [CCLoginConfig configHTTPHeaders:@"kk_iphone"];
     [CCLoginConfig shareInstance].headUrl = [CSNetWorkConfig currentUrl];

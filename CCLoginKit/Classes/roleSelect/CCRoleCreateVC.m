@@ -1,28 +1,27 @@
 //
-//  CCRoleCreateViewController.m
-//  CCTribe
+//  CCRoleCreateVC.m
+//  CCLoginKit
 //
-//  Created by gwh on 2018/7/30.
-//  Copyright © 2018年 杭州鼎代. All rights reserved.
+//  Created by 路飞 on 2018/9/27.
 //
 
-#import "CCRoleCreateViewController.h"
+#import "CCRoleCreateVC.h"
 #import "CCRoleRequest.h"
 #import "CC_NoticeView.h"
 #import "MaskProgressHUD.h"
 #import "CCLoginConfig.h"
 #import "CC_Share.h"
 #import "UserStateManager.h"
-@interface CCRoleCreateViewController (){
-    
-}
+
+@interface CCRoleCreateVC ()
+
 @property(nonatomic,retain) CCInfoTextTF *nickNameTF;
 @property(nonatomic,retain) UIView *displayV;
 @property(nonatomic,retain) CC_Button *defaultBt;
 
 @end
 
-@implementation CCRoleCreateViewController
+@implementation CCRoleCreateVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,21 +39,32 @@
     _nickNameTF.inputTextField.font = [ccui getRFS:14];
     _nickNameTF.backgroundColor = UIColorFromRGB(0xffffff);
     [_displayV addSubview:_nickNameTF];
-    _nickNameTF.cas_styleClass=@"CCRoleCreateViewController_view_input";
     
-    _defaultBt=[CC_UIAtom initAt:_displayV name:@"CCRoleCreateViewController_bt_default" class:[CC_Button class]];
+    _defaultBt = [[CC_Button alloc]initWithFrame:CGRectMake([ccui getRH:15], _nickNameTF.bottom+[ccui getRH:15], [ccui getRH:15], [ccui getRH:15])];
+    [_displayV addSubview:_defaultBt];
     [_defaultBt setBackgroundImage:[UIImage imageNamed:@"kk_regiest_agree_protocol" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateSelected];
+    [_defaultBt setBackgroundImage:[UIImage imageNamed:@"kk_regiest_unagree_protocol" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
     _defaultBt.selected=YES;
     
-    [CC_UIAtom initAt:_displayV name:@"CCRoleCreateViewController_label_default" class:[CC_Label class]];
+    UILabel* defaultLb = [[UILabel alloc]initWithFrame:CGRectMake([ccui getRH:40], _nickNameTF.bottom+[ccui getRH:16], [ccui getRH:150], [ccui getRH:15])];
+    defaultLb.text = @"默认使用该角色登录";
+    defaultLb.textColor = UIColorFromHexStr(@"666666");
+    defaultLb.font = [ccui getRFS:14];
+    [_displayV addSubview:defaultLb];
     
-    CC_Button *defaultTapBt=[CC_UIAtom initAt:_displayV name:@"CCRoleCreateViewController_bt_tap" class:[CC_Button class]];
+    CC_Button* defaultTapBt = [[CC_Button alloc]initWithFrame:CGRectMake([ccui getRH:15], _nickNameTF.bottom+[ccui getRH:5], [ccui getRH:200], [ccui getRH:30])];
+    [_displayV addSubview:defaultTapBt];
+    
     WS(weakSelf);
     [defaultTapBt addTappedOnceDelay:.1 withBlock:^(UIButton *button) {
         weakSelf.defaultBt.selected=!weakSelf.defaultBt.selected;
     }];
-    
-    CC_Button *loginBt=[CC_UIAtom initAt:_displayV name:@"CCRoleCreateViewController_bt_login" class:[CC_Button class]];
+    CC_Button *loginBt = [[CC_Button alloc]initWithFrame:CGRectMake([ccui getRH:20], defaultLb.bottom+[ccui getRH:30], SCREEN_WIDTH-[ccui getRH:40], [ccui getRH:40])];
+    [loginBt setTitle:@"确定" forState:UIControlStateNormal];
+    [loginBt setBackgroundColor:UIColorFromHexStr(@"FF0000")];
+    [loginBt setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    loginBt.titleLabel.font = [ccui getRFS:16];
+    [_displayV addSubview:loginBt];
     [CC_CodeClass setBoundsWithRadius:20 view:loginBt];
     [loginBt addTappedOnceDelay:.1 withBlock:^(UIButton *button) {
         [self requestCreate];
@@ -100,16 +110,16 @@
     MaskProgressHUD *HUD = [MaskProgressHUD hudStartAnimatingAndAddToView:self.view];
     WS(weakSelf);
     [[UserStateManager shareInstance].authTask post:[CCLoginConfig loginHeadUrl] params:para model:nil finishCallbackBlock:^(NSString *error, ResModel *resmodel) {
-
+        
         [HUD stop];
         if (error) {
             [CC_NoticeView showError:error];
         }else{
-                if (weakSelf.type==CreateEnterLogin) {
-                    [CCRoleRequest requestLoginSelectedLoginUserId:resmodel.resultDic[@"response"][@"createUserId"] resetDefaultUser:weakSelf.defaultBt.selected controller:weakSelf type:LoginTypeCreate];
-                }else if (weakSelf.type==CreateEnterSwitch){
-                    [CCRoleRequest requestLoginSelectedLoginUserId:resmodel.resultDic[@"response"][@"createUserId"] resetDefaultUser:weakSelf.defaultBt.selected controller:weakSelf type:LoginTypeSwitch];
-                }
+            if (weakSelf.type==CreateEnterLogin) {
+                [CCRoleRequest requestLoginSelectedLoginUserId:resmodel.resultDic[@"response"][@"createUserId"] resetDefaultUser:weakSelf.defaultBt.selected controller:weakSelf type:LoginTypeCreate];
+            }else if (weakSelf.type==CreateEnterSwitch){
+                [CCRoleRequest requestLoginSelectedLoginUserId:resmodel.resultDic[@"response"][@"createUserId"] resetDefaultUser:weakSelf.defaultBt.selected controller:weakSelf type:LoginTypeSwitch];
+            }
         }
     }];
 }
